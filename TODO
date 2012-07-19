@@ -1,0 +1,22 @@
+TODO ?: 
+
+1) interface for visualisation & editing (including changing order) of hashTable
+    hashTable would have to be stocked (serialized) in GreaseMonkey
+
+2) add catpuring regex ? (ex allowing to show task number in redmine)
+
+INFOS
+
+#http://commons.oreilly.com/wiki/index.php/Greasemonkey_Hacks/Getting_Started#Pitfall_.231:_Auto-eval_Strings
+#http://wiki.greasespot.net/Serialization_Helpers
+#http://userscripts.org/scripts/review/24034
+#http://userscripts.org/scripts/review/104081
+#http://userscripts.org/scripts/review/84846
+
+1)
+    function deserialize(name, def) {return eval(GM_getValue(name, (def || '({})')));}
+    function serialize(name, val) {GM_setValue(name, uneval(val));}
+
+    //serialize('serialized', values); //uncomment to init
+    var hashTable=deserialize('serialized');
+
